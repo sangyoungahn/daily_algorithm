@@ -2,7 +2,22 @@ package level2;
 
 import java.util.ArrayList;
 import java.util.Collections;
-
+/*
+ * 1. 풀이시간 : 시간초과
+ * 2. 풀이방법
+     before = [1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1]
+     before 리스트 하나하나를 탐색하며 after라는 새로운 리스트에 1만 넣어줌
+     after = [1, 1, 1, 1, 1, 1]
+     제거된 0의 개수 = before의 크기 - after의 크기    -> removeZeroCnt에 저장
+     
+     after 리스트의 크기를 시작으로 이진 변환 알고리즘을 통해 binary 리스트에 넣어줌
+     binary 리스트에 거꾸로 들어가있으므로 reverse를 함
+     이진 변환 횟수 1증가   -> toBinaryCnt 증가
+     
+     이진 변환 결과의 결과가 1개면 -> 반복문 종료
+     1개가 아니면 -> binary 리스트에 있는 것들을 before 리스트에 넣어서 다시 동일한 과정 반복
+ * 3. 예상 시간복잡도 : O(n)
+ */
 public class programmers_이진변환반복하기 {
 
 	public static void main(String[] args) {
